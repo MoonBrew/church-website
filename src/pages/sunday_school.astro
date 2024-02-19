@@ -1,0 +1,31 @@
+---
+import Banner from "../components/Banner.astro";
+import PageHeading from "../components/PageHeading.astro";
+import PageSection from "../components/PageSection.astro";
+import BasicLayout from "../layouts/BasicLayout.astro";
+---
+
+<BasicLayout>
+    <PageHeading title="Sunday School" subTitle="For all children aged from 3 to 18"/>
+    <PageSection>
+            Our Sunday School ministry is well organized and now we have a
+            systematic Sunday School system with over 9 teachers including
+            substitute teachers and several classes from Nursery to 10th grade.
+            All our Sunday School teachers are well educated and experienced in
+            teaching ministry, especially the Word of God in full authority. We
+            follow the IPC Sunday school syllabus.
+    </PageSection>
+    <PageSection heading="Our Goal">
+            It is our goal as a church to teach the word of God to our children,
+            leading and guiding them in the right direction in accordance with
+            the Word of God (Bible) equipping them to become leaders and
+            teachers in the future to fulfil the Great Commission of our Lord
+            and Saviour Lord Jesus Christ.
+    </PageSection>
+    <Banner banner="sunday_school_banner.jpg">
+        <p class="md:basis-full md:self-end md:text-5xl text-4xl">
+            Every Sunday
+        </p>
+        <p class="md:basis-full md:text-5xl text-4xl">During Psalms Reading</p>
+    </Banner>
+</BasicLayout>

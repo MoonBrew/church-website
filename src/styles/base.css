@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Mukta";
+    src:
+        url("../fonts/mukta-regular.woff2") format("woff2"),
+        url("../fonts/mukta-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tw Cen Mt";
+    src:
+        local("Tw Cen MT"),
+        url("../fonts/tw_cen_mt_regular.woff2") format("woff2"),
+        url("../fonts/tw_cen_mt_regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rasa";
+    src:
+        url("../fonts/rasa-italic-variablefont_wght.woff2") format("woff2"),
+        url("../fonts/rasa-italic-variablefont_wght.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Rasa";
+    src:
+        url("../fonts/rasa-variablefont_wght.woff2") format("woff2"),
+        url("../fonts/rasa-variablefont_wght.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}

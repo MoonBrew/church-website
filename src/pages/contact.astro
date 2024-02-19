@@ -1,0 +1,16 @@
+---
+import BasicLayout from "../layouts/BasicLayout.astro";
+import MapApp from "../components/MapApp.jsx";
+import PageHeading from "../components/PageHeading.astro";
+import PageSection from "../components/PageSection.astro";
+---
+
+<BasicLayout>
+    <!--Title-->
+    <PageHeading title="Contact Us" />
+    <!--Intro-->
+    <PageSection heading="We are located at:">
+        Lodge Georgetown, 8 Penilee Rd, Paisley PA1 3AX
+    </PageSection>
+    <MapApp client:load />
+</BasicLayout>

@@ -1,0 +1,103 @@
+---
+const BASE = import.meta.env.BASE_URL;
+const menus = [
+    { name: "Home", link: "/" },
+    {
+        name: "Ministries",
+        subMenus: [
+            { name: "Youth Ministry", link: "/youth" },
+            { name: "Ladies Ministry", link: "/ladies" },
+            { name: "Sunday School", link: "/sunday_school" },
+            { name: "Daily Prayer", link: "/daily_prayer" },
+        ],
+    },
+    {
+        name: "More",
+        subMenus: [
+            { name: "About Us", link: "/about" },
+            { name: "Contact Us", link: "/contact" },
+        ],
+    },
+];
+---
+
+<!--Sticky header-->
+<nav
+    class="h-full bg-narvik-50 md:bg-slate-900 md:shadow-2xl md:shadow-blue-400"
+>
+    <button
+        id="asideButton"
+        class="cursor-pointer md:hidden absolute right-8 top-2 w-8 h-8 bg-white border rounded-md border-gray-100 focus:ring focus:ring-offset-1 focus:ring-gray-100 flex items-center justify-center"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+            ></path>
+        </svg>
+    </button>
+    <ul
+        class="fixed md:static w-64 -left-full top-0 md:w-full h-full py-4 md:py-0 text-left md:text-center text-sm md:text-base md:flex md:items-stretch md:justify-evenly leading-[41px] md:leading-[48px] bg-slate-900 text-slate-400 z-10 transition-width ease-in-out duration-300"
+    >
+        {
+            menus.map((menu) =>
+                menu.subMenus ? (
+                    <li class="hover:text-slate-200 md:w-48 group">
+                        <button
+                            class="dropDownButton w-full pl-6 md:pl-0 block outline-none ring-inset focus-visible:ring-2 focus-visible:rounded focus-visible:ring-slate-400 cursor-pointer text-left md:text-center peer"
+                        >
+                            {menu.name}
+                        </button>
+                        <ul class="bg-slate-950 md:bg-slate-900/95 md:top-4 relative md:w-48 h-0 md:h-auto overflow-hidden invisible md:opacity-0 md:invisible md:rounded-md text-slate-400 md:group-hover:top-0 md:group-hover:opacity-100 md:group-hover:visible md :group-focus-within:top-0 md:group-focus-within:opacity-100 md:group-focus-within:visible transition-all duration-300">
+                            {menu.subMenus.map((subMenu) => (
+                                <li>
+                                    <a
+                                        class="hover:text-slate-200 pl-6 md:pl-0 block outline-none ring-inset focus-visible:ring-2 focus-visible:rounded focus-visible:ring-slate-400 cursor-pointer"
+                                        href={BASE + subMenu.link}
+                                    >
+                                        {subMenu.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                ) : (
+                    <li>
+                        <a
+                            class="hover:text-slate-200 pl-6 md:pl-0 md:w-48 block outline-none ring-inset focus-visible:ring-2 focus-visible:rounded focus-visible:ring-slate-400 cursor-pointer"
+                            href={BASE + menu.link}
+                        >
+                            {menu.name}
+                        </a>
+                    </li>
+                ),
+            )
+        }
+    </ul>
+</nav>
+
+<script>
+    function expandAside() {
+        var aside = this.nextElementSibling;
+        aside.classList.toggle("left-0");
+    }
+    function expandDropDown() {
+        var subMenu = this.nextElementSibling;
+        subMenu.classList.toggle("h-48");
+        subMenu.classList.toggle("invisible");
+    }
+
+    const asideButton = document.querySelector("#asideButton");
+    asideButton.addEventListener("click", expandAside);
+
+    const dropDownButton = document.querySelectorAll(".dropDownButton");
+    dropDownButton.forEach((button) => button.addEventListener("click", expandDropDown));
+</script>
