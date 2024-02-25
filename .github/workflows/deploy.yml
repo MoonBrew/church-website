@@ -17,7 +17,6 @@ jobs:
         uses: withastro/action@v2.0.0
         with:
           package-manager: npm
-          node-version: latest
       - name: Deploy to one.com
         uses: moonbrew/one.com-deployer@master
         env:
