@@ -1,0 +1,28 @@
+name: Build and Deploy
+run-name: ${{ github.actor }} is deploying new build
+on:
+  push:
+      branches:
+        - main
+  workflow_dispatch:
+
+env:
+  ACTIONS_STEP_DEBUG: true
+    
+jobs:
+  Build-and-Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Astro Build
+        uses: withastro/action@v2.0.0
+        with:
+          package-manager: npm
+          node-version: latest
+      - name: Deploy to one.com
+        uses: moonbrew/one.com-deployer@master
+        env:
+            ONE_DOMAIN_NAME: epcglasgow.org
+            ONE_SSH_KEY_PUBLIC: ${{ secrets.PUBLIC_KEY_NAME }}
+            ONE_SSH_KEY_PRIVATE: ${{ secrets.PRIVATE_KEY_NAME }}
+            TPO_SRC_PATH: dist
+            TPO_PATH: alpha
