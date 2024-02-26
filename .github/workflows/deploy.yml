@@ -1,4 +1,4 @@
-name: Build and Deploy
+- uses: actions/checkout@v2: Build and Deploy
 run-name: ${{ github.actor }} is deploying new build
 on:
   push:
@@ -14,6 +14,7 @@ jobs:
   Build-and-Deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Astro Build
         uses: withastro/action@v2.0.0
         with:
