@@ -6,6 +6,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   base: "alpha",
+  outDir: "alpha",
   site: "https://epcglasgow.org/alpha",
   integrations: [tailwind({
     // Example: Disable injecting a basic `base.css` import on every page.

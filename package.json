@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "MoonBrew",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
