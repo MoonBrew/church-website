@@ -1,4 +1,4 @@
-- uses: actions/checkout@v2: Build and Deploy
+name: Build and Deploy
 run-name: ${{ github.actor }} is deploying new build
 on:
   push:
