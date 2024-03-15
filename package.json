@@ -1,6 +1,6 @@
 {
   "name": "church-website",
-  "version": "1.0.0",
+  "version": "beta",
   "description": "EPC Church Website",
   "main": "index.astro",
   "scripts": {
