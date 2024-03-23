@@ -4,12 +4,12 @@ const BASE = import.meta.env.BASE_URL;
 ---
 <figure class="flex m-3 max-w-xs md:max-w-2xl gap-3 md:gap-32 items-center">
     <img
-        class="w-40 h-52 md:w-60 md:h-80 rounded-2xl shadow-2xl shadow-slate-950 object-cover shrink-0"
+        class="w-40 h-52 md:w-60 md:h-80 rounded-2xl shadow-2xl shadow-slate-900 object-cover shrink-0"
         src={BASE + "/images/" + image}
         alt={imageAlt}
     />
-    <blockquote class="md:text-xl ">
+    <blockquote class="font-serif md:text-xl ">
         &ldquo;{quote}&rdquo;
-        <footer class="italic md:text-base " >&mdash;{quoter}, {position}</footer>
+        <footer class="italic text-sm md:text-base" >&mdash;{quoter}, {position}</footer>
     </blockquote>
 </figure>

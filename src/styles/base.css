@@ -12,7 +12,7 @@
 }
 
 @font-face {
-    font-family: "Tw Cen Mt";
+    font-family: "Tw_Cen_MT";
     src:
         local("Tw Cen MT"),
         url("../fonts/tw_cen_mt_regular.woff2") format("woff2"),

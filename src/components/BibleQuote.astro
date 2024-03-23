@@ -1,0 +1,15 @@
+---
+const { quote, reference } = Astro.props;
+---
+
+<blockquote class="md:text-2xl first-letter:text-7xl italic drop-case">
+    &ldquo;{quote}&rdquo;
+    <footer class="italic text-sm md:text-base" >&mdash;{reference}</footer>
+</blockquote>
+
+<style>
+.drop-case::first-letter {
+    initial-letter: 2;
+}
+
+</style>
